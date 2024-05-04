@@ -9,9 +9,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
-    const { name, email, telno } = await req.json();
+    const { Ilanadı,Telno ,Fiyat } = await req.json();
     await connectMongoDB();
-    await Ilan.create({ name, email, telno});
+    await Ilan.create({ Ilanadı, Telno, Fiyat});
 
     return NextResponse.json({ message: "ilan kaydedildi." }, { status: 201 });
   } catch (error) {
