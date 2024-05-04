@@ -15,7 +15,7 @@ export default function Ilanver() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !Fiyat || !Telno) {
+    if (! Ilanadı|| !Fiyat || !Telno) {
       setError("Bütün Alanları Doldurunuz!");
       return;
     }
