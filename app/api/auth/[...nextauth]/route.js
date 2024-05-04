@@ -1,4 +1,4 @@
-// 
+// Bismillahirrahmanirrahim 
 
 
 
@@ -10,7 +10,8 @@ import bcrypt from "bcryptjs";
 import Kullanici from "../../../lib/models/user";
 
 
-
+/* role based access control için deneme aşamasında olan bir teknik uygulanmıştır 
+.env dosyası ekleyip secret keyleri düzenleyebilirsiniz.*/
 
 var signin="";
 var secret="asdfgh";
