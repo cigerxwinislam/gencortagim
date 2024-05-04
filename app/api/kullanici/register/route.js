@@ -13,7 +13,7 @@ export async function POST(req) {
     return NextResponse.json({ message: "Kullanici registered." }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
-      { message: "An error occurred while registering the user." },
+      { message: "Kayıt olmadı ." },
       { status: 500 }
     );
   }
