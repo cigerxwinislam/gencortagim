@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Yekazad Software Center tarafından halen yapım aşamasında olan bir Nextjs ile yapılmaktadır.
+Kullanılan kütüphaneler
+* nexth-auth
+* react-bootstrap
+* mdb-react-ui-kit
+
 
 ## Getting Started
 
