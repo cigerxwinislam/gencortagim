@@ -15,10 +15,10 @@ export async function POST(req) {
     await connectMongoDB();
     await Esnaf.create({ name, email, password: hashedPassword });
 
-    return NextResponse.json({ message: "User registered." }, { status: 201 });
+    return NextResponse.json({ message: "Esnaf kaydı yapıldı." }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
-      { message: "An error occurred while registering the user." },
+      { message: "Esnaf kaydında hata." },
       { status: 500 }
     );
   }
