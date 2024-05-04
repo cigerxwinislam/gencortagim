@@ -10,7 +10,7 @@ export async function POST(req) {
     await connectMongoDB();
     await Kullanici.create({ name, email, password: hashedPassword });
 
-    return NextResponse.json({ message: "Kullanici registered." }, { status: 201 });
+    return NextResponse.json({ message: "Kullanici kayıt oldu" }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
       { message: "Kayıt olmadı ." },
