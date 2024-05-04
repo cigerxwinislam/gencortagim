@@ -2,26 +2,26 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 
 export default function Ilanver() {
-  const [name, setName] = useState("");
+  const [Ilanadı, setIlanadı] = useState("");
  const [Telno, setTelno] = useState("")
   const [Fiyat, setFiyat] = useState("");
   const [error, setError] = useState("");
 
-  const router = useRouter();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
+    if (!name || !Fiyat || !Telno) {
       setError("Bütün Alanları Doldurunuz!");
       return;
     }
 
     try {
-      const resUserExists = await fetch("/api/esnaf/ilanteyit", {
+      const resIlanvar = await fetch("/api/esnaf/ilanteyit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,9 +29,9 @@ export default function Ilanver() {
         body: JSON.stringify({ email }),
       });
 
-      const { user } = await resUserExists.json();
+      const { Ilanvar } = await resIlanvar.json();
 
-      if (user) {
+      if (Ilanvar) {
         setError("Böyle bir ilan zaten var");
         return;
       }
@@ -42,21 +42,21 @@ export default function Ilanver() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
-          email,
-          password,
+          Ilanadı,
+          Fiyat,
+          Telno,
         }),
       });
 
       if (res.ok) {
         const form = e.target;
         form.reset();
-        router.push("/esnaf/app/dashboard");
+        
       } else {
         console.log("ilan hatası oldu");
       }
     } catch (error) {
-      console.log("Error during registration: ", error);
+      console.log("Hata oluştu : ", error);
     }
   };
 
@@ -67,38 +67,23 @@ export default function Ilanver() {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setIlanadı (e.target.value)}
             type="text"
             placeholder=""
           />
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="text"
-            placeholder=""
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder=""
-          />
+          
 
 <input
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setTelno(e.target.value)}
             type="password"
             place
             holder=""
           />
   <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
+            onChange={(e) => setFiyat(e.target.value)}
+            type="number"
             placeholder=""
-          />
-
-<input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder=""
-          />
+         />
           <button className="bg-green-600 text-white font-bold cursor-pointer px-6 py-2">
             ilanı yayınla
           </button>
