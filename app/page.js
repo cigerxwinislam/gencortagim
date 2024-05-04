@@ -13,8 +13,8 @@ export function Malper() {
 
 
 
+<h1>yapım aşamasında</h1>
 
-<Alert>Şu An gösterilecek ürün yok</Alert>
 
 
 
