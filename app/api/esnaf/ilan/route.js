@@ -11,12 +11,12 @@ export async function POST(req) {
   try {
     const { name, email, telno } = await req.json();
     await connectMongoDB();
-    await Ilan.create({ name, email, password: hashedPassword });
+    await Ilan.create({ name, email, telno});
 
-    return NextResponse.json({ message: "User registered." }, { status: 201 });
+    return NextResponse.json({ message: "ilan kaydedildi." }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
-      { message: "An error occurred while registering the user." },
+      { message: "ilan hatası ." },
       { status: 500 }
     );
   }
