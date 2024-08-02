@@ -40,13 +40,13 @@ export default function page() {
   <Container style={{  alignItems:'center',  justifyItems:'center', justifyContent:'center'}}>   
 <Row>
 
-<Col><Button style={{background:'green'}} href='/kullanici/app'>Kullanıcı Girişi</Button></Col>
+<Col><Button style={{background:'green'}} href='/'>Kullanıcı Girişi</Button></Col>
 
 
-<Col><Button style={{background:'green'}}  href='/esnaf/app/'>Kurumsal Giriş</Button>
+<Col><Button style={{background:'green'}}  href='/'>Kurumsal Giriş</Button>
 </Col>
 
-<Col><Button style={{background:'green'}}  href='/admin/app'>Diğer</Button>
+<Col><Button style={{background:'green'}}  href='/'>Diğer</Button>
 </Col>
 
 </Row> 
